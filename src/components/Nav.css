@@ -1,0 +1,12 @@
+.nav-link {
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.logo-img {
+  height: 100px;
+  width: 100px;
+}
