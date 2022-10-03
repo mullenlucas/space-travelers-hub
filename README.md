@@ -74,7 +74,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/lucas-mullen-447312119/)
 
 👤 **Lucas Comamala**
-- GitHub: [@mullenlucas](https://github.com/lucascomamala)
+- GitHub: [@lucascomamala](https://github.com/lucascomamala)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/lucas-comamala/)
 
 
