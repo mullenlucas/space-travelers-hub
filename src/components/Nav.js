@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
+import './Nav.css';
 
 function Nav({ title, routes }) {
   return (
