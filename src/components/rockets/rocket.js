@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import {
+  Badge, Card, Button,
+} from 'react-bootstrap';
 import { reserveRocket, cancelRocketReservation } from '../../redux/rocketsSlice';
 
 const Rocket = ({ rocket }) => {
@@ -21,13 +24,13 @@ const Rocket = ({ rocket }) => {
       <img src={rocketImages[0]} alt="rocket" className="rocket-img" />
       <div className=" card-body">
         <h4>{rocketName}</h4>
-        <p>
-          {reserved ? <span>Reserved</span> : ''}
+        <Card.Text>
+          {reserved ? <Badge bg="info" className="me-2">Reserved</Badge> : ''}
           {description}
-        </p>
-        <button type="button" id={id} onClick={handleReserve}>
+        </Card.Text>
+        <Button className="align-self-start" variant={reserved ? 'outline-secondary' : 'primary'} id={id} onClick={handleReserve}>
           {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
-        </button>
+        </Button>
       </div>
     </div>
   );
