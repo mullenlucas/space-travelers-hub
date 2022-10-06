@@ -26,13 +26,13 @@ export const leaveMission = (payload) => ({
 
 export const getMissions = () => async (dispatch) => {
   const response = await axios.get(missionsBaseURL);
-  const formatMissions = response.data.map((e) => ({
+  const objMissions = response.data.map((e) => ({
     id: e.mission_id,
     name: e.mission_name,
     description: e.description,
     joined: false,
   }));
-  dispatch(fetchMissions(formatMissions));
+  dispatch(fetchMissions(objMissions));
 };
 
 const missions = (state = missionsInitialState, action) => {

@@ -1,4 +1,6 @@
 import React from 'react';
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { joinMission, leaveMission } from '../../redux/missionsSlice';
@@ -10,36 +12,34 @@ const MissionItem = ({ mission }) => {
   const dispatch = useDispatch();
   return (
     <>
-      <tr key={id}>
-        <th scope="row" className="text-light">{name}</th>
-        <td className="w-50 text-light">{description}</td>
+      <tr key={id} id={`ID_${id}`}>
+        <th scope="row">{name}</th>
+        <td className="w-20">{description}</td>
         <td>
           {
         joined
-          ? <span className="badge bg-info text-dark">Active Member</span>
-          : <span className="badge bg-light text-dark">Not a Member</span>
+          ? <Badge bg="primary">Active Member</Badge>
+          : <Badge bg="secondary">NOT A MEMBER</Badge>
           }
         </td>
         <td>
           {
             joined
               ? (
-                <button
-                  type="button"
-                  className="btn btn-outline-danger"
+                <Button
+                  variant="outline-danger"
                   onClick={() => dispatch(leaveMission(id))}
                 >
-                  Leave mission
-                </button>
+                  Leave Mission
+                </Button>
               )
               : (
-                <button
-                  type="button"
-                  className="btn btn-outline-info"
+                <Button
+                  variant="outline-success"
                   onClick={() => dispatch(joinMission(id))}
                 >
                   Join Mission
-                </button>
+                </Button>
               )
           }
         </td>

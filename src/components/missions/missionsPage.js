@@ -16,15 +16,15 @@ const MissionPage = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="table-responsive">
-          <Table striped bordered hover variant="dark">
+      <div className="mission-container container">
+        <div className="mission-table table-responsive">
+          <Table striped bordered>
             <thead>
               <tr>
                 <th scope="col">Mission</th>
                 <th scope="col">Description</th>
                 <th scope="col">Status</th>
-                <th scope="col">.</th>
+                <th scope="col">Join</th>
               </tr>
             </thead>
             <tbody>
@@ -34,9 +34,7 @@ const MissionPage = () => {
             </tbody>
           </Table>
         </div>
-
       </div>
-
     </>
   );
 };
