@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import RocketsPage from './components/rockets/rocketsPage';
 import MissionPage from './components/missions/missionsPage';
+import ProfilePage from './components/profile/profilePage';
 
 const routes = [
   {
@@ -30,7 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<RocketsPage />} />
           <Route path="/missions" element={<MissionPage />} />
-          <Route path="/profile" element={<p>Profile page goes here</p>} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/*" element={<p>404 Page not found</p>} />
         </Routes>
       </Router>
