@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import RocketsPage from './components/rockets/rocketsPage';
+import MissionPage from './components/missions/missionsPage';
 
 const routes = [
   {
@@ -28,7 +29,7 @@ function App() {
         <Nav title="Space Travelers&apos; Hub" routes={routes} />
         <Routes>
           <Route path="/" element={<RocketsPage />} />
-          <Route path="/missions" element={<p>Missions page goes here</p>} />
+          <Route path="/missions" element={<MissionPage />} />
           <Route path="/profile" element={<p>Profile page goes here</p>} />
           <Route path="/*" element={<p>404 Page not found</p>} />
         </Routes>
