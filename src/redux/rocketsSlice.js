@@ -68,4 +68,6 @@ export {
   fetchRockets,
 };
 
+export const selectRockets = (state) => state;
+
 export default rocketsReducer;
