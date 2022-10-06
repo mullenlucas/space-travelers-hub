@@ -20,7 +20,7 @@ const ProfilePage = () => {
           {rockets.filter((rocket) => rocket.reserved).length > 0 ? (
             reservedRockets.map((rocket) => (
               <li key={rocket.id}>
-                <span>{rocket.rocketName}</span>
+                <a href={rocket.wikipedia} target="_blank" rel="noreferrer">{rocket.rocketName}</a>
                 <Button className="align-self-start" variant="outline-danger" size="sm" id={rocket.id} onClick={handleCancel}>
                   Cancel Reservation
                 </Button>
