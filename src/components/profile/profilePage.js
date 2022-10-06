@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Button } from 'react-bootstrap';
 
 const ProfilePage = () => {
   const rockets = useSelector((state) => state.rockets);
@@ -12,7 +13,10 @@ const ProfilePage = () => {
           {rockets.filter((rocket) => rocket.reserved).length > 0 ? (
             reservedRockets.map((rocket) => (
               <li key={rocket.id}>
-                {rocket.rocketName}
+                <span>{rocket.rocketName}</span>
+                <Button className="align-self-start" variant="outline-danger" size="sm">
+                  Cancel Reservation
+                </Button>
               </li>
             ))) : <p>No rockets reserved</p>}
         </ul>
