@@ -9,11 +9,12 @@ const ProfilePage = () => {
       <div>
         <h2>My Rockets</h2>
         <ul>
-          {reservedRockets.map((rocket) => (
-            <li key={rocket.id}>
-              {rocket.rocketName}
-            </li>
-          ))}
+          {rockets.filter((rocket) => rocket.reserved).length > 0 ? (
+            reservedRockets.map((rocket) => (
+              <li key={rocket.id}>
+                {rocket.rocketName}
+              </li>
+            ))) : <p>No rockets reserved</p>}
         </ul>
       </div>
       <div>
