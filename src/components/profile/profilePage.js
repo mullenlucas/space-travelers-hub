@@ -1,9 +1,15 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
+import { cancelRocketReservation } from '../../redux/rocketsSlice';
 
 const ProfilePage = () => {
+  const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+
+  const handleCancel = (e) => {
+    dispatch(cancelRocketReservation(+e.target.id));
+  };
 
   return (
     <div>
@@ -14,7 +20,7 @@ const ProfilePage = () => {
             reservedRockets.map((rocket) => (
               <li key={rocket.id}>
                 <span>{rocket.rocketName}</span>
-                <Button className="align-self-start" variant="outline-danger" size="sm">
+                <Button className="align-self-start" variant="outline-danger" size="sm" id={rocket.id} onClick={handleCancel}>
                   Cancel Reservation
                 </Button>
               </li>
