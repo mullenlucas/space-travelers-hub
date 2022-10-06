@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import { cancelRocketReservation } from '../../redux/rocketsSlice';
+import './profile.css';
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -12,10 +13,10 @@ const ProfilePage = () => {
   };
 
   return (
-    <div>
+    <div className="profile-page">
       <div>
-        <h2>My Rockets</h2>
-        <ul>
+        <h2 className="profile-header">My Rockets</h2>
+        <ul className="profile-list">
           {rockets.filter((rocket) => rocket.reserved).length > 0 ? (
             reservedRockets.map((rocket) => (
               <li key={rocket.id}>
