@@ -33,6 +33,7 @@ const fetchRockets = () => async (dispatch) => {
     description: rocket.description,
     rocketImages: rocket.flickr_images,
     reserved: false,
+    wikipedia: rocket.wikipedia,
   }));
   dispatch(rocketsFetched(newState));
 };
@@ -67,5 +68,7 @@ export {
   cancelRocketReservation,
   fetchRockets,
 };
+
+export const selectRockets = (state) => state;
 
 export default rocketsReducer;

@@ -1,0 +1,26 @@
+.profile-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+.profile-list > li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
