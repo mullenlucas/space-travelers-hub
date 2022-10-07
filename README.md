@@ -16,8 +16,7 @@
 
 ## Website
 
-Coming soon ! 
-> The website will be uploaded to Github pages once the project is finished
+[Click here to access the Demo](https://spectacular-phoenix-050171.netlify.app/)
 
 ## Information
 
