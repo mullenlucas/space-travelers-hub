@@ -21,7 +21,7 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-page">
-      <div>
+      <div className="profile-sec">
         <h2 className="profile-header">My Rockets</h2>
         <ul className="profile-list">
           {rockets.filter((rocket) => rocket.reserved).length > 0 ? (
@@ -35,7 +35,7 @@ const ProfilePage = () => {
             ))) : <p>No rockets reserved</p>}
         </ul>
       </div>
-      <div>
+      <div className="profile-sec">
         <h2 className="profile-header">My Missions</h2>
         <ul className="profile-list">
           {missions.filter((mission) => mission.joined).length > 0 ? (
