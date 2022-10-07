@@ -31,6 +31,7 @@ export const getMissions = () => async (dispatch) => {
     name: e.mission_name,
     description: e.description,
     joined: false,
+    wikipedia: e.wikipedia,
   }));
   dispatch(fetchMissions(objMissions));
 };

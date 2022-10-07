@@ -1,15 +1,22 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import { cancelRocketReservation } from '../../redux/rocketsSlice';
+import { leaveMission } from '../../redux/missionsSlice';
 import './profile.css';
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
+  const missions = useSelector((state) => state.missions);
+  const joinedMissions = missions.filter((mission) => mission.joined);
 
   const handleCancel = (e) => {
     dispatch(cancelRocketReservation(+e.target.id));
+  };
+
+  const handleLeave = (m) => {
+    dispatch(leaveMission(m.target.id));
   };
 
   return (
@@ -29,7 +36,18 @@ const ProfilePage = () => {
         </ul>
       </div>
       <div>
-        <h2>My Missions</h2>
+        <h2 className="profile-header">My Missions</h2>
+        <ul className="profile-list">
+          {missions.filter((mission) => mission.joined).length > 0 ? (
+            joinedMissions.map((mission) => (
+              <li key={mission.id}>
+                <a href={mission.wikipedia} target="_blank" rel="noreferrer">{mission.name}</a>
+                <Button className="align-self-start" variant="outline-danger" size="sm" id={mission.id} onClick={handleLeave}>
+                  Leave Mission
+                </Button>
+              </li>
+            ))) : <p>No missions joined</p>}
+        </ul>
       </div>
     </div>
   );
