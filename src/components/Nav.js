@@ -5,7 +5,7 @@ import logo from '../assets/planet.png';
 
 function Nav({ title, routes }) {
   return (
-    <>
+    <header className="container">
       <Link className="header-logo" to="/">
         <img src={logo} alt="logo space travelers" className="logo-img" />
         <h1>{title}</h1>
@@ -14,14 +14,14 @@ function Nav({ title, routes }) {
         <ul>
           {routes.map(({ name, path }) => (
             <li key={path}>
-              <NavLink className="nav-link" to={path} end>
-                {name}
+              <NavLink className="nav-link text-primary" to={path} end>
+                { name }
               </NavLink>
             </li>
           ))}
         </ul>
       </nav>
-    </>
+    </header>
   );
 }
 
