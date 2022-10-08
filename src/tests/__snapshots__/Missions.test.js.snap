@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="mission-container container"
+>
+  <div
+    className="mission-table table-responsive"
+  >
+    <table
+      className="table table-striped table-bordered"
+    >
+      <thead>
+        <tr>
+          <th
+            scope="col"
+          >
+            Mission
+          </th>
+          <th
+            scope="col"
+          >
+            Description
+          </th>
+          <th
+            scope="col"
+          >
+            Status
+          </th>
+          <th
+            scope="col"
+          >
+            Join
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;
